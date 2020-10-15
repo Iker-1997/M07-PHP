@@ -17,6 +17,7 @@
 	<p><a href="new_prod.html">Añadir producto</a></p>
 	<p>
 	<?php 
+		$id=0;
 		$f = file("productos.txt");
 		echo "<table>";
 		echo "<tr><th>Producte</th><th>Descripcio</th><th>Preu</th></tr>";
@@ -25,8 +26,10 @@
 			echo "
 			<tr><td>$a[0]</td>
 			<td>$a[1]</td>
-			<td>$a[2]</td></tr>
+			<td>$a[2]</td>
+			<td><a href='borrar_prod.php?id=$id'> <img src='trash.png' alt='delete' width='20' height='20'></a></td></tr>
 			";
+			$id += 1;
 		}	
  	?>
  	</p>
